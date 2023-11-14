@@ -11,10 +11,10 @@ router.get('/', (ctx, next) => {
 })
 
 
-router.post('/users', (ctx, next) => {
+router.get('/users', (ctx, next) => {
   ctx.body="users"
 })
-router.put('/users/:id', (ctx, next) => {
+router.get('/users/:id', (ctx, next) => {
   console.log(ctx)
   ctx.body="users,id"
 })
