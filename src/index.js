@@ -1,23 +1,27 @@
-var Koa=require('koa');
+const Koa = require('koa');
+const Router = require('@koa/router');
 
-var router = require('koa-router')();  /*引入是实例化路由** 推荐*/
+const app = new Koa();
+const router = new Router();
 
-//实例化
-var app=new Koa();
-
-router.get('/',async (ctx)=>{
-    ctx.body="首页";
-
-})
-
-
-router.get('/p1',async (ctx)=>{
-  ctx.body="p1";
+router.get('/', (ctx, next) => {
+  // ctx.router available
+  ctx.body="root"
 
 })
 
 
-app.use(router.routes());   /*启动路由*/
-app.use(router.allowedMethods());
+router.post('/users', (ctx, next) => {
+  ctx.body="users"
+})
+router.put('/users/:id', (ctx, next) => {
+  console.log(ctx)
+  ctx.body="users,id"
+})
+
+app
+  .use(router.routes())
+  .use(router.allowedMethods());
+
 app.listen("8001", () => console.log("服务端启动"));
 
