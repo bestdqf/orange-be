@@ -1,20 +1,20 @@
-// const Koa=require('Koa')
-// // 导入koa-router
-// const Router=require('koa-router')
-// const app=new Koa();
-// // 创建路由对象
-// const router=new Router();
+const Koa=require('Koa')
+// 导入koa-router
+const Router=require('koa-router')
+const app=new Koa();
+// 创建路由对象
+const router=new Router();
 // const fs=require('fs')
-// const bodyParser = require('koa-bodyparser');
-// app.use(bodyParser());
-// // 使用路由中间件
-// app.use(router.routes());
-// router.get('/',(ctx)=>{
+const bodyParser = require('koa-bodyparser');
+app.use(bodyParser());
+// 使用路由中间件
+app.use(router.routes());
+router.get('/',(ctx)=>{
 
-//   console.log(ctx)
+  console.log(ctx)
 
-//     ctx.body={a:1}
-// })
+    ctx.body={a:1}
+})
 // router.get('/login',(ctx)=>{
 //     ctx.type='html'
 //     ctx.body=fs.createReadStream('./login.html')
@@ -25,14 +25,5 @@
 // router.get('/users/:id',(ctx)=>{
 //     ctx.body='这是用户的编号:'+ctx.params.id
 // })
-// app.listen("8001", () => console.log("服务端启动"));
+app.listen("8001", () => console.log("服务端启动"));
 
-const Koa = require('koa');
-const app = new Koa();
-
-// 响应
-app.use(ctx => {
-  ctx.body = 'Hello Koa';
-});
-
-app.listen(8001);
