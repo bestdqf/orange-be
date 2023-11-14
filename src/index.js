@@ -8,18 +8,15 @@ router.get('/', (ctx, next) => {
   // ctx.router available
   ctx.body="root"
   return next()
-})
-
-
-router.get('/users', (ctx, next) => {
+}).get('/users', (ctx, next) => {
   ctx.body="users"
   return next()
 })
-router.get('/users/:id', (ctx, next) => {
-  console.log(ctx)
-  ctx.body="users,id"
-  next()
-})
+// router.get('/users/:id', (ctx, next) => {
+//   console.log(ctx)
+//   ctx.body="users,id"
+//   next()
+// })
 
 app
   .use(router.routes())
