@@ -7,16 +7,18 @@ const router = new Router();
 router.get('/', (ctx, next) => {
   // ctx.router available
   ctx.body="root"
-
+  next()
 })
 
 
 router.get('/users', (ctx, next) => {
   ctx.body="users"
+  next()
 })
 router.get('/users/:id', (ctx, next) => {
   console.log(ctx)
   ctx.body="users,id"
+  next()
 })
 
 app
