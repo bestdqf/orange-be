@@ -27,5 +27,12 @@
 // })
 // app.listen("8001", () => console.log("服务端启动"));
 
-const Koa=require('Koa')
-console.log(Koa)
+const Koa = require('koa');
+const app = new Koa();
+
+// 响应
+app.use(ctx => {
+  ctx.body = 'Hello Koa';
+});
+
+app.listen(8001);
