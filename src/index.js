@@ -7,6 +7,9 @@ const app = new Koa();
 const router = new Router();
 
 
+  // axios.get( `https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx81f25331c0868425&secret=78ff6f8ee843494161a16dd47d058c14&code=${1}&grant_type=authorization_code`,).then(data=>{
+  //   console.log(data)
+  // })
 
 router.get('/', (ctx, next) => {
   ctx.body="root"
