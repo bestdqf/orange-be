@@ -20,7 +20,7 @@ router.get('/', (ctx, next) => {
 
 
 router.get('/login', async  (ctx, next) => {
-  console.log(ctx.request.query)
+  // console.log(ctx.request.query)
 
   const {code} = ctx.request.query
 
