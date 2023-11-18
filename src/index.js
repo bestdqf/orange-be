@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const Router = require('@koa/router');
-const {get} = require('./request')
+// const {get} = require('./request')
+const axios = require('axios')
 
 const app = new Koa();
 const router = new Router();
@@ -12,12 +13,20 @@ router.get('/', (ctx, next) => {
   return next()
 })
 
+
+
+
 router.get('/login', async  (ctx, next) => {
   console.log(ctx.request.query)
 
   const code = ctx.request.query
 
-   const a = await axios.get(`https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx81f25331c0868425&secret=78ff6f8ee843494161a16dd47d058c14&code=${code}&grant_type=authorization_code`)
+   const a = await axios({
+    method: "get",
+    url: `https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx81f25331c0868425&secret=78ff6f8ee843494161a16dd47d058c14&code=${code}&grant_type=authorization_code`,
+    params:{},
+  })
+
 
    console.log(a)
 
