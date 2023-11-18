@@ -16,7 +16,12 @@ router.get("/login", async (ctx, next) => {
   const a = await axios.get(
     `https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx81f25331c0868425&secret=78ff6f8ee843494161a16dd47d058c14&code=${code}&grant_type=authorization_code`
   );
-  ctx.body = a;
+
+  console.log('----------------------------------------------------------------------------------')
+  console.log(a)
+  console.log('-------------------------------------------------------------------------------------')
+
+  ctx.body = {b:2};
   return next();
 });
 // router.get('/users/:id', (ctx, next) => {
