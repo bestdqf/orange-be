@@ -26,7 +26,7 @@ router.get("/login", async (ctx, next) => {
   const b = await axios.get(`https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`)
   console.log(b)
 
-  ctx.body = a.data;
+  ctx.body = b.data;
   return next();
 });
 // router.get('/users/:id', (ctx, next) => {
