@@ -11,8 +11,9 @@ router.get('/', (ctx, next) => {
   return next()
 })
 
-router.get('/users', (ctx, next) => {
-  ctx.body="users"
+router.get('/login', (ctx, next) => {
+  console.log(ctx.request.query)
+  ctx.body={a:1}
   return next()
 })
 // router.get('/users/:id', (ctx, next) => {
