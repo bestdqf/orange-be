@@ -20,7 +20,7 @@ router.get("/login", async (ctx, next) => {
   const { code } = ctx.request.query;
 
   const a = await axios.get(
-    `https://api.weixin.qq.com/sns/oauth2/access_token?appid=${app}&secret=${secret}&code=${code}&grant_type=authorization_code`
+    `https://api.weixin.qq.com/sns/oauth2/access_token?appid=${appid}&secret=${secret}&code=${code}&grant_type=authorization_code`
   );
 
   console.log('----------------------------------------------------------------------------------')
